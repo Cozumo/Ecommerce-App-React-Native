@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Home, Profile, Search } from './screens/index.js';
+import { Home, Profile, Search } from '../screens/index.js';
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from '../constants/index.js';
 
@@ -18,7 +18,7 @@ const tabsScreenOptions = {
         right: 0,
         left: 0,
         elevation: 0,
-        height: 70,
+        height: 50,
     }
 }
 

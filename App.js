@@ -1,10 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts } from 'expo-font';  //to use custom fonts
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
+import BottomTabNavigation from './navigation/BottomTabNavigation';
+import { Cart , ProductDetails } from './screens/index.js';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
+  //importing custom fonts while fontsLoaded(bool) checks if theyre loaded
   const [fontsLoaded] = useFonts({
     regular: require("./assets/fonts/Poppins-Regular.ttf"),
     light: require("./assets/fonts/Poppins-Light.ttf"),
@@ -14,6 +19,7 @@ export default function App() {
     semibold: require("./assets/fonts/Poppins-SemiBold.ttf"),
   })
 
+  //checks if fonts are loaded and removes splash screen
   const onLayoutRootView = useCallback( async()=> {
     if(fontsLoaded)
     {
@@ -27,22 +33,24 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.textStyle}>Native</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen 
+          name="BottomTab" 
+          component={BottomTabNavigation}
+          options={{headerShown: false}}    //Header name with Back button disabled
+        />
+        <Stack.Screen 
+          name="Cart" 
+          component={Cart}
+          options={{headerShown: true}}    //Header name with Back button enable
+        />
+        <Stack.Screen 
+          name="ProductDetails" 
+          component={ProductDetails}
+          options={{headerShown: true}}    //Header name with Back button enable
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  textStyle: {
-    fontFamily: "bold",
-    fontSize: 20,
-  }
-});
+};
