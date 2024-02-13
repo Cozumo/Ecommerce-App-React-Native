@@ -3,6 +3,7 @@ import Profile from "./Profile";
 import Search from "./Search";
 import ProductDetails from "./ProductDetails";
 import Cart from './Cart';
+import NewRivals from "./NewRivals";
 
 
 export {
@@ -10,5 +11,6 @@ export {
     Profile,
     Search,
     ProductDetails,
-    Cart
+    Cart,
+    NewRivals,
 }

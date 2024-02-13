@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         borderRadius: SIZES.medium,
-        marginHorizontal: 10,
+        marginHorizontal: 12,
         marginTop: 20,
         height: 50
     },
@@ -21,7 +21,9 @@ const styles = StyleSheet.create({
         marginLeft: 10,
     },  
     searchTxt: {
-        color: COLORS.gray,
+        color: COLORS.black,
+        fontFamily: 'regular',
+        marginTop: 3,
     },
     searchCameraImgWrapper: {
         backgroundColor: COLORS.primary,

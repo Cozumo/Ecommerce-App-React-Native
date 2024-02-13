@@ -7,6 +7,7 @@ const Carousel = () => {
     const slides = [
         require('../../assets/images/fn1.jpg'),
         require('../../assets/images/fn2.jpg'),
+        require('../../assets/images/fn3.jpg'),
     ]
 
     return (
@@ -15,7 +16,7 @@ const Carousel = () => {
                 images={slides}
                 dotColor={COLORS.primary}
                 inactiveDotColor={COLORS.secondary}
-                ImageComponentStyle={{borderRadius: 15, width: "95%", marginTop: 15}}
+                ImageComponentStyle={{borderRadius: 15, width: "93.5%", marginTop: 15}}
                 autoplay
                 circleLoop
             />

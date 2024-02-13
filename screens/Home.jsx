@@ -5,6 +5,8 @@ import styles from './home.styles';
 import { Ionicons } from "@expo/vector-icons";
 import Welcome from '../components/Home/Welcome';
 import Carousel from '../components/Home/Carousel';
+import Headings from '../components/Home/Headings';
+import ProductRow from '../components/products/ProductRow';
 
 const Home = () => {
     return (
@@ -27,9 +29,12 @@ const Home = () => {
                 </View>
             </View>
 
-            <ScrollView>
+            <ScrollView >
                 <Welcome/>
                 <Carousel/>
+                <Headings/>
+                <ProductRow/>
+                <Text>{"\n\n\n\n"}</Text>
             </ScrollView>
         </SafeAreaView>
     );

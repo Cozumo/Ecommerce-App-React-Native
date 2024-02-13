@@ -1,8 +1,8 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Home, Profile, Search } from '../screens/index.js';
+import { Home, Profile, Search } from '../screens/index';
 import { Ionicons } from "@expo/vector-icons";
-import { COLORS } from '../constants/index.js';
+import { COLORS } from '../constants/index';
 
 //Creating Tab
 const Tab = createBottomTabNavigator();

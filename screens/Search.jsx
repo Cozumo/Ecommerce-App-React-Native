@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View, TouchableOpacity, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SIZES } from "../constants";
 import styles from './search.style';
+import axios from 'axios';
 
-function Search(props) {
+function Search() {
+    const [searchTxt, setSearchTxt] = useState();
+    const [searchList, setSearchList] = useState([]);
+
+    const handleSearch = async() =>
+    {
+        const response = await axios.get('http://10.0.2.2:3000/api/products/search/')
+    }
+
     return (
         //safe area view to keep component items inside the viewable area not on notification panel
         <SafeAreaView>
@@ -16,8 +25,8 @@ function Search(props) {
                 <View style={styles.searchTextWrapper}>
                     <TextInput
                         style={styles.searchTxt}
-                        value=''
-                        onPressIn={()=> {}}
+                        value={searchTxt}
+                        onChangeText={setSearchTxt}
                         placeholder="Search What You Want?"
                     />
                 </View>

@@ -24,7 +24,7 @@ const Welcome = () => {
                     <TextInput
                         style={styles.searchTxt}
                         value=''
-                        onPressIn={()=> navigation.navigate("Search")}
+                        onPressIn={()=> navigation.navigate("Search")} // as never used to remove typscrript error
                         placeholder="Search What You Want?"
                     />
                 </View>
